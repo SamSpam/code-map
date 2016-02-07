@@ -130,3 +130,5 @@ Example
 var square = function(number) { return number * number };
 var x = square(4) // x gets the value 16
 ```
+
+See more on functions in JavaScript [here](/functions.md). 
