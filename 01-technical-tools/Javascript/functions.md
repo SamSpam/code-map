@@ -73,6 +73,17 @@ Inside an ordinary function, the value of `this` depends on how the function is 
 
 In ES6 arrow function syntax, requiring *strict mode*, the lexical `this` refers to the enclosing execution context's `this`.
 
+##Function keywords
+
+Keywords are special words in JS reserved for particular uses.
+
+"**Function**" - used in ES5 JS to invoke a function.
+ "**new**" - used when calling a constructor function to create a new object
+
+"**var**" - declares a variable in the current execution context (i.e. current function or global) and can be reassigned as necessary.
+"**let**" - used to define variables limiting their scope to the block in which they are declared.
+""**const**" -  follow the same scope rules as variables but can't be re-declared, in other words they're constant.
+
 ##Function Invocation
 
 There are four ways to invoke a function in JavaScript.
@@ -129,15 +140,26 @@ function myFunction(a, b) {
 myObject = myFunction.call(myObject, 10, 2);
 ```
 
-##Function keywords
-
 ##Anonymous functions
 An anonymous function is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
 
-The most common use of anonymous functions is as arguments to other functions. 
-
-##First-class functions
+The most common use of anonymous functions is as arguments to other functions.
 
 ##Higher-order functions
 
+These types of functions take one or more functions as arguments and/or returns a function upon execution. All other functions are first-order (not to be confused with first-class, which is a higer-order function type).
+
+`Map` is an example of a higher-order functions, which takes a function and an array as parameters and returns a new array.
+
+##First-class functions
+
+In JavaScript FP, functions are treated as 'First-class functions'. This means that it's possible to pass functions as arguments to other functions, returning them as the values form other functions and assigning them to variables or storing them in data structures.
+
+Second-class functions exist within an imperative functional programming paradigm.
+
+
 ##Callbacks
+
+A callback function is a function that is passed as an argument to another function and is invoked after some kind of event.
+
+This is a piece of executable code passed as an argument to other code which is expected to call back (execute) the argument as some defined time. The invocation may be immediate as in a **synchronous callback** or it might happen at a later time as in an **asynchronous callback**.
