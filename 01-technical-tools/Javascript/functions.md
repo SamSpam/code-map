@@ -62,7 +62,7 @@ console.log(power(2, 10));
 // → 1024
 ```
 
-The new ES6 function, called an *arrow function* or *fat arrow function*, has a shorter syntax and lexically binds the `this` value. It requires 'strict' when being used. Syntax:
+The new ES6 function, called an *arrow function* or *fat arrow function*, has a shorter syntax and lexically binds the `this` value referring to the enclosing execution context's `this`. It requires 'strict' when being used.Syntax:
 ```
 (param1, param2, …, paramN) => { statements }
 ```
@@ -70,8 +70,6 @@ The new ES6 function, called an *arrow function* or *fat arrow function*, has a 
 The `this` in JavaScript is like the natural language pronoun "he" which refers to the antecedent noun in the way that the `this` refers to the object that the function is bound to.
 
 Inside an ordinary function, the value of `this` depends on how the function is called - using `strict` or not. When not in `strict` mode, the value of the `this` must be set to an object, so the default is the enclosing execution context, such as the global object or otherwise. In `strict` mode, the value of `this` remains at whatever it is set to when entering execution mode.
-
-In ES6 arrow function syntax, requiring *strict mode*, the lexical `this` refers to the enclosing execution context's `this`.
 
 ##Function keywords
 
@@ -91,19 +89,18 @@ There are four ways to invoke a function in JavaScript.
 ###As a function
 When a function is called without a parent object, the global `this` is invoked.  
 For example, this will return the window object:
-```
-function myFunction() {
+```function myFunction() {
     return this;
 }
 myFunction();
 ```
+
 ###As a method
 In JavaScript functions can be written as object methods, to manipulate state and interact with other objects.
 
 For example, the following object has a method "fullName" which when called will return "John Doe".
 
-```
-var myObject = {
+```var myObject = {
     firstName:"John",
     lastName: "Doe",
     fullName: function () {
@@ -117,6 +114,7 @@ myObject.fullName();
 If a function invocation is preceded with a *new* keyword, it is a constructor function. This creates a new object, inheriting the properties and methods from its constructor.
 
 For example, the following code will return "John":
+
 ```
 // This is a function constructor:
 function myFunction(arg1, arg2) {
@@ -140,10 +138,11 @@ function myFunction(a, b) {
 myObject = myFunction.call(myObject, 10, 2);
 ```
 
-##Anonymous functions
-An anonymous function is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
+##First-class functions
 
-The most common use of anonymous functions is as arguments to other functions.
+In JavaScript FP, functions are treated as 'First-class functions'. This means that it's possible to pass functions as arguments to other functions, returning them as the values form other functions and assigning them to variables or storing them in data structures.
+
+Second-class functions exist within an imperative functional programming paradigm.
 
 ##Higher-order functions
 
@@ -151,12 +150,65 @@ These types of functions take one or more functions as arguments and/or returns 
 
 `Map` is an example of a higher-order functions, which takes a function and an array as parameters and returns a new array.
 
-##First-class functions
+Higher-order functions can be used to:
+* Create new functions
+* Change other functions
+* Provide new types of control flow
 
-In JavaScript FP, functions are treated as 'First-class functions'. This means that it's possible to pass functions as arguments to other functions, returning them as the values form other functions and assigning them to variables or storing them in data structures.
+This is a higher-order function:
+```
+function greaterThan(n) {
+  return function(m) { return m > n; };
+}
+var greaterThan10 = greaterThan(10);
+console.log(greaterThan10(11));
+// → true
+```
 
-Second-class functions exist within an imperative functional programming paradigm.
+###Abstraction
 
+Higher-order functions are useful for abstracting functional elements of code into smaller pieces to then compile for execution. For example, you could use the following code to console log each element of an array in an ordinary function:
+```
+var array = [1, 2, 3];
+for (var i = 0; i < array.length; i++) {
+  var current = array[i];
+  console.log(current);
+}
+```
+
+Abstracting this into a function, you get:
+```
+function logEach(array) {
+  for (var i = 0; i < array.length; i++)
+    console.log(array[i]);
+}
+```
+
+This is cleaner and simpler, and reduces propensity for bugs. Taking this one more step, we can remove the 'verb' aspect of this function so we can do whatever we want with the array, like so:
+```
+function forEach(array, action) {
+  for (var i = 0; i < array.length; i++)
+    action(array[i]);
+}
+
+forEach(["Wampeter", "Foma", "Granfalloon"], console.log);
+// → Wampeter
+// → Foma
+// → Granfalloon
+```
+
+The above code is an abstraction but not a higher order function because the function is not taking or returning another function.
+
+##Anonymous functions
+An anonymous function is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
+
+The most common use of anonymous functions is as arguments to other functions.
+
+Example of an anonymous function:
+```
+var x = function (a, b) {return a * b};
+var z = x(4, 3);
+```
 
 ##Callbacks
 
