@@ -80,6 +80,8 @@ console.log(results);
 
 ##Writing JavaScript
 
+Outside the scope of this tutorial, but useful to understand for full context of what JavaScript code does, is the ECMAScript lexical grammar, which is how text is interpreted and read by the program and is described [here](/https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar) on MDN's developer website. 
+
 ###Strings
 
 In javascript a bunch of letters, numbers and words enclosed in single or double quotation marks is known as a string.
@@ -131,4 +133,4 @@ var square = function(number) { return number * number };
 var x = square(4) // x gets the value 16
 ```
 
-See more on functions in JavaScript [here](/functions.md). 
+See more on functions in JavaScript [here](/functions.md).
