@@ -4,7 +4,7 @@ Javascript is a computer language established in 1995 by founder Brendan Eich fr
 
 When the browser client sends a GET request to a server, Javascript code is read line-by-line as it is an interpreted language not requiring a compiler.
 
-Javascript can be written in an Object-Oriented style or functionally. In object oriented programming (OOP), everything is considered an object with state and behaviours. Classes are used to define the objects, and states and behaviours are translated in members and methods. In functional programming, functions are used to perform individual tasks. Functions can be used over and over again, can be passed as arguments and can call themselves (recursion). Functions are useful tools to enable modular-style development.
+Javascript can be written in an Object-Oriented style or functionally. In object oriented programming (OOP), everything is considered an object with state and behaviours. Classes are used to define the objects, and states and behaviours are translated in members and methods. In functional programming (FP), functions are used to perform individual tasks. Functions can be used over and over again, can be passed as arguments and can call themselves (recursion). Functions are useful tools to enable modular-style development.
 
 Apps can be designed either functionally, object-oriented or both.
 
@@ -40,7 +40,7 @@ Hello World
 
 ###File I/O
 
-Node.js makes using libraries and external files easy with its fs commands such as fs.readFile. Readfile takes a path and a callback (which is executed once the file is read)
+Node.js makes using libraries and external files easy with its fs commands such as fs.readFile. Readfile takes a path and a callback (which is executed once the file is read).
 
 Example from [An Absolute Beginners Guide to Node.js](/http://blog.modulus.io/absolute-beginners-guide-to-nodejs)
 ```
@@ -80,7 +80,7 @@ console.log(results);
 
 ##Writing JavaScript
 
-Outside the scope of this tutorial, but useful to understand for full context of what JavaScript code does, is the ECMAScript lexical grammar, which is how text is interpreted and read by the program and is described [here](/https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar) on MDN's developer website. 
+Outside the scope of this tutorial, but useful to understand for full context of what JavaScript code does, is the ECMAScript lexical grammar, which is how text is interpreted and read by the program and is described [here](/https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar) on MDN's developer website.
 
 ###Strings
 

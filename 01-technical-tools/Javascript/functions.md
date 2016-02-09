@@ -20,8 +20,8 @@ The central tenet of FP is a loose coupling to data, preferring manipulating dat
 FP tends to use fewer lines of code than OOP because FP doesn't require building classes for creating objects. FP is a model whereby computations are exclusively expressed as the combination of (mathematical) functions. Since FP doesn't deal with changes of state, information about the data doesn't need to be stored and traced, what's important is the parameters and the return values.
 
 To choose between which paradigm is best to use, Michael Fogus [suggests](/http://blog.fogus.me/2013/07/22/fp-vs-oo-from-the-trenches/):
-* Whenever I write some code to deal with data about people then functional programming seems to work best.
-* Whenever I write some code to simulate people then object-oriented programming seems to work best.
+* Whenever I write some code to deal with data *about* people then **functional programming** seems to work best.
+* Whenever I write some code to *simulate* people then **object-oriented programming** seems to work best.
 
 For a robust discussion about the difference between FP and OOP, see [this Quora thread](/https://www.quora.com/What-does-object-oriented-programming-do-better-than-functional-programming-and-why-is-it-the-most-popular-paradigm-when-everybody-seems-to-say-functional-programming-is-superior).
 
@@ -62,7 +62,7 @@ console.log(power(2, 10));
 // → 1024
 ```
 
-The new ES6 function, called an *arrow function* or *fat arrow function*, has a shorter syntax and lexically binds the `this` value referring to the enclosing execution context's `this`. It requires 'strict' when being used.Syntax:
+The new ES6 function, called an *arrow function* or *fat arrow function*, has a shorter syntax and lexically binds the `this` value referring to the enclosing execution context's `this`. It requires 'strict' when being used. Syntax:
 ```
 (param1, param2, …, paramN) => { statements }
 ```
@@ -140,7 +140,7 @@ myObject = myFunction.call(myObject, 10, 2);
 
 ##First-class functions
 
-In JavaScript FP, functions are treated as 'First-class functions'. This means that it's possible to pass functions as arguments to other functions, returning them as the values form other functions and assigning them to variables or storing them in data structures.
+In JavaScript FP, functions are treated as 'First-class functions'. This means that it's possible to pass functions as arguments to other functions, returning them as the values from other functions and assigning them to variables or storing them in data structures.
 
 Second-class functions exist within an imperative functional programming paradigm.
 
